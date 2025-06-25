@@ -1,34 +1,31 @@
 # 📊 Dashboard de Análise de Vendas 📈
 
-Projeto de análise de dados usando **Python (pandas)** para limpeza e transformação, e **Power BI** para visualização interativa.
+Projeto de análise de dados usando **Python (pandas)** para limpeza e transformação, e **Power BI** para visualização.
 
-## 📌 Tecnologias:
-- Python 3.x
+## Tecnologias:
+- Python
 - pandas
 - Power BI
 
-## 📈 Funcionalidades:
+## Funcionalidades:
 - Leitura de arquivo CSV de vendas
 - Limpeza e transformação de dados
 - Criação de coluna de Receita
 - Exportação de dataset limpo
 - Visualização de dados em dashboard Power BI
 
-## 📸 Como executar:
+## ▶️ Como executar:
 
-### 1️⃣ Instalar dependências:
+### 1. Instalar dependências:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Executar limpeza de dados:
+### 2. Executar limpeza de dados:
 ```bash
 python notebooks/limpeza_dados.py
 ```
 
-### 3️⃣ Abrir `dashboard/dashboard.pbix` no Power BI Desktop
+### 3. Abrir `dashboard/dashboard.pbix` no Power BI Desktop
 
-## 👩‍💻 Sobre mim:
-Me chamo **Beatriz Leonne**, apaixonada por dados e programação. Conectando Python com Power BI para transformar números em decisões.
-
-[🔗 LinkedIn](https://linkedin.com/in/seuusuario) | [📧 Email](mailto:seuemail@email.com)
+⭐ Esse projeto é parte do meu portfólio, e estou sempre em busca de aprender mais. Obrigada por passar por aqui! Se esse projeto te ajudou ou inspirou, sinta-se à vontade para dar uma estrela no repositório ou abrir uma issue com sugestões. Me adiciona no LinkedIn, vamos conversar sobre tech e projetos :)
