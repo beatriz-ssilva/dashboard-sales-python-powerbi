@@ -1,21 +1,43 @@
 import pandas as pd
+import os
 
-# Carregar o CSV
-df = pd.read_csv('../data/vendas.csv')
+#caminhos dos arquivos
+INPUT_FILE = os.path.join('..', 'data', 'vendas.csv')
+OUTPUT_FILE = os.path.join('..', 'data', 'vendas_limpo.csv')
 
-# Verificar dados iniciais
-print(df.head())
+def carregar_dados(caminho):
+    try:
+        df = pd.read_csv(caminho)
+        print("✅ Dados carregados com sucesso.")
+        return df
+    except FileNotFoundError:
+        print(f"❌ Arquivo não encontrado: {caminho}")
+        exit()
+    except Exception as e:
+        print(f"❌ Erro ao carregar dados: {e}")
+        exit()
 
-# Limpar dados: remover nulos e ajustar tipos
-df.dropna(inplace=True)
-df['Data'] = pd.to_datetime(df['Data'])
-df['Valor'] = df['Valor'].astype(float)
-df['Quantidade'] = df['Quantidade'].astype(int)
+def limpar_dados(df):
+    print("Visualizando os primeiros dados:")
+    print(df.head())
 
-# Criar coluna de receita
-df['Receita'] = df['Valor'] * df['Quantidade']
+    #limpeza
+    df = df.dropna()
+    df['Data'] = pd.to_datetime(df['Data'], errors='coerce')
+    df['Valor'] = df['Valor'].astype(float)
+    df['Quantidade'] = df['Quantidade'].astype(int)
 
-# Exportar para novo CSV
-df.to_csv('../data/vendas_limpo.csv', index=False)
+    #nova coluna Receita
+    df['Receita'] = df['Valor'] * df['Quantidade']
+    
+    return df
 
-print("Dataset limpo e salvo com sucesso!")
+def salvar_dados(df, caminho):
+    df.to_csv(caminho, index=False)
+    print(f"Arquivo exportado com sucesso para: {caminho}")
+
+if __name__ == "__main__":
+    df_original = carregar_dados(INPUT_FILE)
+    df_tratado = limpar_dados(df_original)
+    salvar_dados(df_tratado, OUTPUT_FILE)
+    print("✅ Processo de limpeza concluído com sucesso!")
