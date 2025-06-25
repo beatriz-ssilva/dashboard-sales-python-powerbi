@@ -14,7 +14,7 @@ Projeto de análise de dados usando **Python (pandas)** para limpeza e transform
 - Exportação de dataset limpo
 - Visualização de dados em dashboard Power BI
 
-## ▶️ Como executar:
+▶️ Como executar:
 
 ### 1. Instalar dependências:
 ```bash
